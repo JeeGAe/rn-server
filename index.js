@@ -28,9 +28,9 @@ app.use(session({
 
 
 // 라우터 설정
-const naverLoginRouter = require('app/router/naverLogin');
-const kakaoLoginRouter = require('app/router/kakaologin');
-const firebaseLoginRouter = require('app/router/firebaseLogin');
+const naverLoginRouter = require('./router/naverLogin.js');
+const kakaoLoginRouter = require('./router/kakaologin.js');
+const firebaseLoginRouter = require('./router/firebaseLogin.js');
 
 // 라우터 적용
 app.use('/naverlogin', naverLoginRouter);
