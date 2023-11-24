@@ -28,17 +28,19 @@ app.use(session({
 
 
 // 라우터 설정
-const naverLoginRouter = require('./router/naverLogin.js');
-// const kakaoLoginRouter = require('./router/kakaologin.js');
-const firebaseLoginRouter = require('./router/firebaseLogin.js');
+const naverLoginRouter = require('./router/naverLogin');
+const kakaoLoginRouter = require('./router/kakaoLogin');
+const firebaseLoginRouter = require('./router/firebaseLogin');
 
 // 라우터 적용
 app.use('/naverlogin', naverLoginRouter);
-// app.use('/kakaoLogin', kakaoLoginRouter);
+app.use('/kakaoLogin', kakaoLoginRouter);
 app.use('/firebaseLogin', firebaseLoginRouter);
 
 
-
+app.get('/', (req, res) => {
+  res.send('성공!!')
+})
 // 에러처리 미들웨어
 app.use((err, req, res, next) => {
   console.error(err.stack);
